@@ -34,16 +34,46 @@ etc.
 I iterate through the entire board while holding a vector class that holds the string letter of each zone. It keeps track of the number of occurances it appears on the original board, and keeps track of the number stars on the board the class is being used on at the given time. In my vector I have each zone sorted by its size(occurances) and solve the grid by solving from the smallest to largest in my loop throughout the grid. Whenever I reach the desired zone letter, I call my recursion function which calls a column/row/diagonal checker which is O(n)
 
 
+for sporcle1
 
-DESCRIPTION OF YOUR ADDTIONAL PUZZLES:
-Briefly explain the design of the puzzles or dictionaries and what
-makes them "interesting" test cases (or why they aren't interesting).
+Number of solutions: 1
 
-SUMMARY OF PERFORMANCE OF YOUR PROGRAM ON THE PROVIDED PUZZLES AND 
-ON YOUR ADDITIONAL PUZZLES:
-# of solutions & approximate wall clock running time for different
-puzzles / stars per zone for a single solution or all solutions. Be
-specific about which puzzle/parameters you were timing.
+Solution 1:
+aab@b
+@bbcc
+dd@cc
+edec@
+e@ecc
+
+for puzzle original:
+aabbb
+abbcc
+dddcc
+edecc
+eeecc
+
+PARAMETERS:
+- each row has s stars, each star being represented by a "@"
+- no stars can be touching (even diagonally)
+- one group of letters is one zone, and each zone should
+  have s stars
+- Each row can have no more than S stars in it
+- Each column can have no more than S stars in it
+
+
+
+
+define output mode: 
+define solution mode:
+
+./a.out [input file] [output file] [stars per zone] [output mode] [solution mode]
+
+input file example: sporcle1.txt
+output file example: out
+stars per zone example: 1,2,3, any number
+output mode: "Print" or "Count"
+solution mode: "One_solution" or "All_solutions"
+
 
 
 
