@@ -18,7 +18,7 @@ own, as described in "Academic Integrity for Homework" handout.
 
 
 
-ESTIMATE OF # OF HOURS SPENT ON THIS ASSIGNMENT:  < 25 >
+ESTIMATE OF # OF HOURS SPENT ON THIS ASSIGNMENT:  < 10 >
 
 
 
@@ -30,7 +30,6 @@ The average number of squares in a zone (t)
 The number of stars per zone(s)? 
 etc.
 
-Order notation is approximately ((w*h)^4 * z*t
 
 I iterate through the entire board while holding a vector class that holds the string letter of each zone. It keeps track of the number of occurances it appears on the original board, and keeps track of the number stars on the board the class is being used on at the given time. In my vector I have each zone sorted by its size(occurances) and solve the grid by solving from the smallest to largest in my loop throughout the grid. Whenever I reach the desired zone letter, I call my recursion function which calls a column/row/diagonal checker which is O(n)
 
