@@ -18,7 +18,7 @@ own, as described in "Academic Integrity for Homework" handout.
 
 
 
-ESTIMATE OF # OF HOURS SPENT ON THIS ASSIGNMENT:  < 25 >
+ESTIMATE OF # OF HOURS SPENT ON THIS ASSIGNMENT:  < 10 >
 
 
 
