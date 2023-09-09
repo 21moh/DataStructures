@@ -1,0 +1,42 @@
+for sporcle1
+
+Number of solutions: 1
+
+Solution 1:
+aab@b
+@bbcc
+dd@cc
+edec@
+e@ecc
+
+original:
+aabbb
+abbcc
+dddcc
+edecc
+eeecc
+
+PARAMETERS:
+- each row has s stars
+- no stars can be touching (even diagonally)
+- one group of letters is one zone, and each zone should
+  have s stars
+- Each row can have no more than S stars in it
+- Each column can have no more than S stars in it
+
+*Problem is about Recursion*
+
+
+define output mode: 
+define solution mode:
+
+./a.out [input file] [output file] [stars per zone] [output mode] [solution mode]
+
+
+//print board for checking
+          for (unsigned int i = 0; i < board.size(); i++) {
+            for (unsigned int j = 0; j < board[i].size(); j++){
+              std::cout << board[i][j];
+            }
+            std::cout << std::endl;
+          }
