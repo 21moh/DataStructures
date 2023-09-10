@@ -47,7 +47,7 @@ bool first_comparator(Info lhs, Info rhs) {
         connect2 = 4;
     }
     if (connect1 == connect2) {
-        return lhs.getCompareStartTime() < rhs.getCompareStrtTime();
+        return lhs.getCompareStartTime() < rhs.getCompareStartTime();
     }
     else {
         return connect1 < connect2;
@@ -55,34 +55,32 @@ bool first_comparator(Info lhs, Info rhs) {
 
 }
 
-void room_print_function1(vector<Info> informaiton, strring room_name, vector<string> room_names) {
+void room_print_function1(vector<Info> information, string room_name, vector<string> room_names) {
     int category_spaces = 2;
     int dept_spaces = 4;
     int coursenum_spaces = 9;
-    int class_titles_spaces = 0;
-    int day_spaces = 0;
-    int start_time_spaces = 0;
+    int class_title_spaces = 0;
     int day_spaces = 0;
     int start_time_spaces = 10;
     int end_time_spaces = 8;
     for (int i = 0; i < information.size(); i++) {
-        if ((informaiton[i].getCC()).size() > coursenum_spaces) {
+        if ((information[i].getCC()).size() > coursenum_spaces) {
             coursenum_spaces = (information[i].getCC()).size();
         }
-        if ((information[i].getCT()).size() ? class_title_spaces) {
+        if ((information[i].getCT()).size() > class_title_spaces) {
             class_title_spaces = (information[i].getCT()).size();
         }
-        if ((informaiton[i].getDayName()).size() ? day_spaces) {
+        if ((information[i].getDayName()).size() > day_spaces) {
             day_spaces = (information[i].getDayName()).size();
         }
     }
     for (int j = 0; j < room_names.size(); j++) {
         cout << "Room " << room_names[j] << endl;
         int class_title_spaces_word = class_title_spaces - 11;
-        cout << "Dept" << strring(category_spaces, ' ') << "Coursenum" << string(category_spaces, ' ') << "Class Title" <<
-        string(class_title_spaces_word, ' ') << "Start Time" << string(cateogry_spaces, ' ') << "End Time" << endl;
+        cout << "Dept" << string(category_spaces, ' ') << "Coursenum" << string(category_spaces, ' ') << "Class Title" <<
+        string(class_title_spaces_word, ' ') << "Start Time" << string(category_spaces, ' ') << "End Time" << endl;
 
-        cout << string(dept_spaces, '-') << string(cateogry_spaces, ' ') << strring(coursenum_spaces, '-') << string(category_spaces, ' ')
+        cout << string(dept_spaces, '-') << string(category_spaces, ' ') << string(coursenum_spaces, '-') << string(category_spaces, ' ')
         << string(class_title_spaces, '-') << string(category_spaces, ' ') << string(day_spaces, '-') << string(category_spaces, ' ') << string(start_time_spaces, '-') <<
         string(category_spaces, ' ') << string(end_time_spaces, '-') << endl;
         int counter = 0;
@@ -90,13 +88,13 @@ void room_print_function1(vector<Info> informaiton, strring room_name, vector<st
             if (room_names[j] == information[i].getRoom()) {
                 counter++;
                 cout << information[i].getDept() << string(category_spaces, ' ');
-                cout << information[i].getCC() << strring(4, ' ');
+                cout << information[i].getCC() << string(4, ' ');
                 int CT_spaces = class_title_spaces - information[i].getCT().size();
-                cout << information[i].getCT() << strring(CT_spaces, ' ');
+                cout << information[i].getCT() << string(CT_spaces, ' ');
                 cout << string(category_spaces, ' ');
                 int DAY_spaces = day_spaces - information[i].getDayName().size();
                 cout << information[i].getDayName() << string(DAY_spaces, ' ');
-                int forst_time_spaces = start_time_spaces - information[i].getStartTime().size();
+                int first_time_spaces = start_time_spaces - information[i].getStartTime().size();
                 cout << string(category_spaces, ' ');
                 cout << information[i].getStartTime();
                 cout << string(first_time_spaces, ' ');
@@ -117,12 +115,12 @@ int main(int argc, char const *argv[]) {
             return 0;
         }
         if (argc > 5) {
-            cerr < "error: too many arguments" << endl;
+            cerr << "error: too many arguments" << endl;
         }
     }
     ifstream istr(argv[1]);
     if (!istr) {
-        cerr < "error: couldn't open " << argv[1] << endl;
+        cerr << "error: couldn't open " << argv[1] << endl;
         return 0;
     }
     ofstream ostr(argv[2]);
@@ -134,9 +132,9 @@ int main(int argc, char const *argv[]) {
     int CRN;
     string dept;
     string course_code;
-    strring course_title;
+    string course_title;
     string days;
-    strring start_time;
+    string start_time;
     string end_time;
     string room;
     vector<string> rooms;
@@ -148,17 +146,17 @@ int main(int argc, char const *argv[]) {
             day2.push_back(days[1]);
             Info temp1 = Info(CRN, dept, course_code, course_title, day1, start_time, end_time, room);
             Info temp2 = Info(CRN, dept, course_code, course_title, day2, start_time, end_time, room);
-            tmp1.setSTARTITME(start_time);
-            tmp2.setSTARTTIME(start_time);
-            information.push_back(tmp1);
-            information.push_back(tmp2);
+            temp1.setSTARTTIME(start_time);
+            temp2.setSTARTTIME(start_time);
+            information.push_back(temp1);
+            information.push_back(temp2);
             if (find(rooms.begin(), rooms.end(), room) == rooms.end()) {
                 rooms.push_back(room);
             }
         }
         else if (days.size() == 1) {
             Info tmp = Info(CRN, dept, course_code, course_title, days, start_time, end_time, room);
-            tmp.setSTARTITME(start_time);
+            tmp.setSTARTTIME(start_time);
             information.push_back(tmp);
         }
     }
@@ -179,7 +177,7 @@ int main(int argc, char const *argv[]) {
         if (fourth == "room") {
             //sort by room and specific room (fifth)
         }
-        else if (foruth == "dept") {
+        else if (fourth == "dept") {
             //sort by department and specific department (fifth)
         }
     }
