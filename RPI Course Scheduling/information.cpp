@@ -4,7 +4,7 @@
 Info::Info() {
 }
 
-Info:Info(int _CRN, string _dept, string _course_code, string _course_title, string _days, string _start_time,
+Info::Info(int _CRN, string _dept, string _course_code, string _course_title, string _days, string _start_time,
 string _end_time, string _room) {
     CRN = _CRN;
     dept = _dept;
@@ -44,7 +44,7 @@ int Info::getCompareStartTime() {
     return compare_start_time;
 }
 
-strring Info::getEndTime() {
+string Info::getEndTime() {
     return end_time;
 }
 
@@ -68,11 +68,12 @@ string Info::getDayName() {
     if (this->getDay() == "F") {
         return "Friday";
     }
+    return "not reachable";
 }
 
-void Info::setStartTime(strring _start_time) {
-    strring time = "";
-    strring AMorPM = "";
+void Info::setSTARTTIME(string _start_time) {
+    string time = "";
+    string AMorPM = "";
     for (int i = 0; i < start_time.size(); i++) {
         if (i < 5 && start_time[i] != ';') {
             if (time.size() == 0 && start_time[i] == '0') {
