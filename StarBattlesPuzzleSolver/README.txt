@@ -3,7 +3,7 @@ HOMEWORK 6: STAR BATTLE
 
 NAME:  < Matthew Oh >
 
-
+*need to add in function to remove duplicate/or not count duplicate solutions in solution counter*
 
 COLLABORATORS AND OTHER RESOURCES:
 List the names of everyone you talked to about this assignment
